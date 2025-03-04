@@ -1,0 +1,52 @@
+You are tasked with performing Residuals Simulation in Residual Networks. 
+
+Task Overview:
+Compare the aggregated results of multiple model responses from the previous round with those from the current round. Identify specific differences such as content hallucinations, detail discrepancies, or additional information. If no significant differences are found, indicate accordingly. Ensure that only genuine residuals are reported.
+
+Instructions:
+
+1. Comparison Basis:
+Perform a one-to-one comparison between each model's response from the previous round and its corresponding response in the current round.
+
+2. Types of Residuals to Identify:
+Content Errors (Hallucinations):** Factual inaccuracies or fabricated information introduced in the current response.
+Detail Discrepancies:** Missing details, additional specifics, or changes in the level of detail.
+Additional Information:** New information or perspectives not present in the previous response.
+
+3. Output Format:
+Overall Indicator:
+Start with `"Residuals Detected: Yes"` if at least one model has residuals.
+Use `"Residuals Detected: No"` if no significant differences are found across all models.
+Residual Details:
+For each model with residuals, provide a concise description of the specific differences.
+List each model's residual on a separate line, prefixed by the model number for clarity.
+
+4. Authenticity Assurance:**
+Only report actual differences. Do not infer or generate residuals that do not exist.
+Verify each identified residual to ensure its validity and relevance.
+
+Examples:
+Case 1:
+Input:
+Query: Which number is greater, 8.9 or 8.11?
+Previous round of response:
+To compare 8.9 and 8.11, we can analyze based on the number of decimal places and their values.1. 8.9 can be viewed as 8.90, indicating that its decimal part is 90.2. The decimal part of 8.11 is 11.Since 90 is greater than 11, we can conclude that:8.11 > 8.9
+Current round of responses:
+Model 1: Compare the decimal parts:\nThe decimal part of 8.9 is .9 (which can be written as .90)\nThe decimal part of 8.11 is .11\n Compare the first decimal place: 9 and 1: Clearly, 9 is greater than 1.\nTherefore, after comparison, it is concluded that 8.9 > 8.11.
+Model 2: To determine which number is greater between 8.9 and 8.11, let's compare them step by step.\n8.9 can be written as 8.90\n8.11 remains 8.11\nBoth numbers have the same whole number part: 8.\nCompare the tenths place: 9 (in 8.90) vs 1 (in 8.11). Since 9 > 1, 8.90 is greater than 8.11. \nTherefore, 8.9 is greater than 8.11.
+Output:
+Residuals Detected: Yes
+Model 1: Incorrectly concludes that 8.9 is greater than 8.11, contradicting the previous accurate conclusion that 8.11 is larger.
+Model 2: Incorrectly concludes that 8.9 is greater than 8.11, contradicting the previous accurate conclusion that 8.11 is larger.
+
+Case 2:
+Input:
+Query: What is the capital of France?
+Previous round of responses:
+The capital of France is Paris. It is known for its rich history, art, and culture.
+Current round of responses:
+Model 1: The capital of France is Paris. It is renowned for landmarks like the Eiffel Tower and the Louvre Museum.
+Model 2: The capital of France is Paris, famous for its cuisine and fashion industries.
+
+Output:
+Residuals Detected: No

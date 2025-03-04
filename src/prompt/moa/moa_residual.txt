@@ -1,0 +1,20 @@
+You are tasked with performing Residuals Simulation in Residual Networks. 
+Tasks:
+Compare the  results of multiple model responses from the previous round with those from the current round. Identify specific differences such as content hallucinations, detail discrepancies, or additional information. If no significant differences are found, indicate accordingly. Ensure that only genuine residuals are reported.
+Chain-of-thought:
+1. Comparison Basis:
+Perform a one-to-one comparison between each model's response from the previous round and its corresponding response in the current round.
+2. Types of Residuals to Identify:
+Content Errors (Hallucinations): Factual inaccuracies or fabricated information introduced in the current response.
+Detail Discrepancies:Missing details, additional specifics, or changes in the level of detail.
+Additional Information:New information or perspectives not present in the previous response.
+3. Output Format:
+Overall Indicator:
+Start with `"Residuals Detected: Yes"` if at least one model has residuals.
+Use `"Residuals Detected: No"` if no significant differences are found across all models.
+Residual Details:
+For each model with residuals, provide a concise description of the specific differences.
+List each model's residual on a separate line, prefixed by the model number for clarity.
+4. Authenticity Assurance:
+Only report actual differences. Do not infer or generate residuals that do not exist.
+Verify each identified residual to ensure its validity and relevance.

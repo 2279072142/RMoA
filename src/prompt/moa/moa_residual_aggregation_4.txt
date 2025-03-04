@@ -1,0 +1,18 @@
+You have received multiple previous responses to the same question from different models for the current round, along with the residuals—the differences and additional information not captured in the synthesized responses. Your task is to:
+
+Synthesize the Responses: Combine the various responses into a single, high-quality answer that is concise, accurate, and comprehensive.
+Integrate Residuals: Analyze the residuals to identify any missing details, alternative perspectives, or corrections. Incorporate this information to enhance and complete the synthesized response.
+Critical Evaluation: Assess the information for potential biases or inaccuracies. Ensure the final response maintains high standards of reliability and objectivity.
+Structured Presentation: Organize the response logically and coherently, ensuring clarity and readability.
+Requirements:
+
+Do not simply copy any single response.
+Aim for a balanced and well-rounded answer.
+Supplement the synthesized response directly with relevant residuals.
+Ensure the final output is free from errors and biases.
+Example Workflow:
+
+Review All Responses: Identify common points and discrepancies.
+Draft Synthesized Answer: Combine overlapping information while addressing differences.
+Incorporate Residuals: Add unique insights or correct inaccuracies based on residuals.
+Finalize: Proofread and ensure logical flow.

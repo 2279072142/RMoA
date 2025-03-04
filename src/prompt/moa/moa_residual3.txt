@@ -1,0 +1,68 @@
+Please simulate residuals in residual networks. Your task is to extract the differences between the aggregated results of multiple model responses from the previous round and the multiple model responses from the current round. Note that this is not a simple repetition or summary; instead, it focuses on specific differences such as content hallucinations, detail discrepancies, or additional information. If there are no significant differences, do not create residuals, and ensure that any detected residuals are genuine. Output the residual content using the following format:
+
+{ 
+  "residual_answer": "Yes" or "No",
+  "residual_content": "Residuals of Model 1 compared to previous round responses\nResiduals of Model 2 compared to previous round responses\n...\nResiduals of Model N compared to previous round responses"
+}
+
+**Detailed Instructions:**
+
+1. Comparison Basis:
+   - Compare each model's response from the previous round with its corresponding response in the current round on a one-to-one basis.
+
+2. Residual Content:
+   - **Content Errors (Hallucinations):** Identify any factual inaccuracies or fabricated information introduced in the current round's response.
+   - **Detail Discrepancies:** Note any missing details, additional specifics, or changes in the level of detail.
+   - **Additional Information:** Highlight any new information or perspectives added that were not present in the previous round.
+
+3. Output Format:
+   - `residual_answer`:
+     - Set to `"Yes"` if at least one model has residuals.
+     - Set to `"No"` if no significant differences are detected across all models.
+   - `residual_content`:
+     - For each model that has residuals, provide a concise description of the specific differences compared to the previous round.
+     - Ensure each model's residuals are listed on a separate line, prefixed by the model number for clarity.
+
+4. Authenticity Assurance:
+   - Only record actual differences. Do not infer or generate residuals that do not exist.
+   - Verify each identified residual to ensure its validity and relevance.
+
+Case:
+Input:
+query: What breed dog is smallest?
+Previous round of response: The smallest breed of dog is generally considered to be the Chihuahua. Despite their diminutive stature, Chihuahuas often have bold personalities and can be quite feisty.
+\nThis round of multiple responses:
+model 1:The smallest dog breed is generally considered to be the Chihuahua. Adult Chihuahuas typically weigh between 4 to 9 pounds at the shoulder. 
+model 2:small dog breed is the Pomeranian. Pomeranians typically weigh between 3 to 7 pounds (1.4 to 3.2 kg) and stand about 8 to 12 inches (20 to 30 cm) tall at the shoulder. They are known for their fluffy coats and lively, friendly personalities.    
+Residual model Output:
+{
+  "residual_answer": "Yes",
+  "residual_content": "Residuals of Model 1 compared to previous round responses: The weight range of Chihuahuas was stated as 4 to 9 pounds, which differs from the previous round's mention of 2 to 6 pounds. Additionally, the mention of height at the shoulder was not present in the previous response.\nResiduals of Model 2 compared to previous round responses: The Pomeranian was mentioned as the smallest dog breed, which contradicts the previous round's identification of the Chihuahua as the smallest breed. This introduces a factual inaccuracy."
+}
+
+Input:
+query:Which number is greater, 8.9 or 8.11?
+Previous round of response:To compare 8.9 and 8.11, we can analyze based on the number of decimal places and their values.
+1. 8.9 can be viewed as 8.90, indicating that its decimal part is 90.
+2. The decimal part of 8.11 is 11.
+Since 90 is greater than 11, we can conclude that:
+$$
+8.11 > 8.9
+$$
+In summary, 8.11 is the larger number.
+This round of multiple responses:
+model 1:Compare the decimal parts:
+- The decimal part of 8.9 is .9 (which can be written as .90)
+- The decimal part of 8.11 is .11
+- Compare the first decimal place: 9 and 1: Clearly, 9 is greater than 1.
+Therefore, after comparison, it is concluded that 8.9 > 8.11.
+model 2:To determine which number is greater between 8.9 and 8.11, let's compare them step by step.
+  8.9 can be written as 8.90
+  8.11 remains 8.11
+  Both numbers have the same whole number part: 8.
+  Compare the tenths place: 9 (in 8.90) vs 1 (in 8.11). Since 9 > 1, 8.90 is greater than 8.11.Therefore, 8.9 is greater than 8.11.
+Residual model Output:
+{
+  "residual_answer": "Yes",
+  "residual_content": "Residuals of Model 1 compared to previous round responses: Incorrectly concludes that 8.9 is greater than 8.11, contradicting the previous accurate conclusion that 8.11 is larger.\nResiduals of Model 2 compared to previous round responses: Incorrectly concludes that 8.9 is greater than 8.11, contradicting the previous accurate conclusion that 8.11 is larger."
+}

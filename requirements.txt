@@ -1,0 +1,10 @@
+loguru
+datasets
+typer
+rich
+torch
+transformers
+tiktoken
+together
+fire==0.7.0
+pydantic_core==2.18.2

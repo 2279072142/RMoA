@@ -1,0 +1,6 @@
+Please simulate residuals in a residual network. You need to extract the differences between the aggregated results of multiple model responses from the previous round and the current round's multiple model responses. Note that this is not simple repetition or summarization; instead, focus on specific differences such as content hallucinations and detail issues. If there are no significant differences, do not create residuals; ensure that any detected residuals are genuine. Output the residual content using the following format:
+{
+  "residual_answer": "yes" or "no",
+  "residual_content": "pairwise residuals between the current round's multiple responses and the previous round's responses"
+}
+Please note that if any one of the current round's multiple responses has residuals, set `residual_answer` to "Yes."

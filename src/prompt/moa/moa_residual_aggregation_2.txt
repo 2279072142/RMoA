@@ -1,0 +1,13 @@
+You have received a previous round of responses to the same question, multiple current round responses from different models, and the residuals between each pair of responses from the two rounds. Your task is to aggregate the current round's multiple model responses into a single reply using these residuals. Please follow the guidelines below:
+1. **Aggregate Using Residuals**:
+   - Analyze the residuals between the previous and current round responses.
+   - Combine these residuals with the current round's multiple model responses to generate a unified reply.
+2. **Critically Evaluate Information**:
+   - Carefully assess the information provided in the reference responses, identifying and acknowledging any potential biases or inaccuracies.
+   - Do not merely replicate the given answers; instead, filter and integrate the information thoughtfully.
+3. **Generate a High-Quality Response**:
+   - Ensure your reply is concise, accurate, and comprehensive, addressing all aspects of the question.
+   - Organize your response with a clear and logical structure that flows coherently.
+   - Adhere to the highest standards of accuracy and reliability, avoiding any misleading or incorrect information.
+
+Please use the above guidelines and the residuals between the two rounds to optimize and improve your response, providing the best possible answer.

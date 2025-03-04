@@ -1,0 +1,13 @@
+Case1:
+Question:Find the degree for the given field extension Q(sqrt(2), sqrt(3), sqrt(18)) over Q.
+Options: A.0; B.4; C.2; D.6
+Output: 
+choice:[C]
+Reason:The degree of a field extension is defined as the dimension of the extension field as a vector space over the base field. In the case of the field extension \(\mathbb{Q}(\sqrt{2})\) over \(\mathbb{Q}\):1. The field \(\mathbb{Q}(\sqrt{2})\) consists of all elements of the form \(a + b\sqrt{2}\), where \(a\) and \(b\) are rational numbers.2. The minimal polynomial of \(\sqrt{2}\) over \(\mathbb{Q}\) is \(x^2 - 2\), which is a polynomial of degree 2.Therefore, the degree of the field extension \(\mathbb{Q}(\sqrt{2})\) over \(\mathbb{Q}\) is 2.
+
+Case2:
+Question:A machine learning problem involves four attributes plus a class. The attributes have 3, 2, 2, and 2 possible values each. The class has 3 possible values. How many maximum possible different examples are there?
+Options: A:12 ; B:24; C:48; D:72
+Output: 
+choice:[D]
+Reason:In machine learning problems, we need to calculate the product of the possible values ​​of each attribute and class to find the maximum possible number of different examples. Given: Attribute 1 has 3 possible values, Attribute 2 has 2 possible values, Attribute 3 has 2 possible values, Attribute 4 has 2 possible values, and Class has 3 possible values. The total number of different examples is calculated as: 3 × 2 × 2 × 2 × 3 = 72. Therefore, the maximum possible number of different examples is 72 (choice D).
