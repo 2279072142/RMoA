@@ -19,6 +19,4 @@ Although multi-agent systems based on large language models show strong capabili
 2. Get your Together API Key & export it: `export TOGETHER_API_KEY=`
 3. Run the python file: `python test_rmoa.py`
 
-## Run your RMoA by vllm interence
-1. `pip install vllm`
 
